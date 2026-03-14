@@ -21,10 +21,9 @@ namespace RSDKv3_4
         public List<GameConfig.ObjectInfo> objects = new List<GameConfig.ObjectInfo>();
 
         /// <summary>
-
         /// whether or not to load the global objects in this stage
         /// </summary>
-        public bool loadGlobalObjects = false;
+        public bool loadGlobalObjects = true;
 
         public abstract void Read(Reader reader);
 
