@@ -134,9 +134,14 @@
         }
 
         /// <summary>
+        /// The number of chunks that a stage has
+        /// </summary>
+        public const int CHUNK_LIST_SIZE = 512;
+
+        /// <summary>
         /// the list of chunks in the file
         /// </summary>
-        public Block[] chunkList = new Block[512];
+        public Block[] chunkList = new Block[CHUNK_LIST_SIZE];
 
         public Tiles128x128()
         {
@@ -155,7 +160,7 @@
 
         public void Read(Reader reader)
         {
-            for (int c = 0; c < 512; c++)
+            for (int c = 0; c < CHUNK_LIST_SIZE; c++)
                 chunkList[c].Read(reader);
 
             reader.Close();
@@ -175,7 +180,7 @@
 
         public void Write(Writer writer)
         {
-            for (int c = 0; c < 512; c++)
+            for (int c = 0; c < CHUNK_LIST_SIZE; c++)
                 chunkList[c].Write(writer);
 
             writer.Close();

@@ -120,6 +120,11 @@
         }
 
         /// <summary>
+        /// The number of tiles that a stage has
+        /// </summary>
+        public const int TILE_LIST_SIZE = 0x400;
+
+        /// <summary>
         /// A list of all the mask values
         /// </summary>
         public CollisionMask[][] collisionMasks = new CollisionMask[2][];
@@ -128,8 +133,8 @@
         {
             for (int p = 0; p < 2; ++p)
             {
-                collisionMasks[p] = new CollisionMask[0x400];
-                for (int i = 0; i < 0x400; ++i)
+                collisionMasks[p] = new CollisionMask[TILE_LIST_SIZE];
+                for (int i = 0; i < TILE_LIST_SIZE; ++i)
                     collisionMasks[p][i] = new CollisionMask();
             }
         }
@@ -146,12 +151,12 @@
         {
             for (int p = 0; p < 2; ++p)
             {
-                collisionMasks[p] = new CollisionMask[0x400];
-                for (int c = 0; c < 0x400; ++c)
+                collisionMasks[p] = new CollisionMask[TILE_LIST_SIZE];
+                for (int c = 0; c < TILE_LIST_SIZE; ++c)
                     collisionMasks[p][c] = new CollisionMask();
             }
 
-            for (int c = 0; c < 0x400; ++c)
+            for (int c = 0; c < TILE_LIST_SIZE; ++c)
             {
                 collisionMasks[0][c].Read(reader);
                 collisionMasks[1][c].Read(reader);
@@ -171,7 +176,7 @@
 
         public void Write(Writer writer)
         {
-            for (int c = 0; c < 0x400; ++c)
+            for (int c = 0; c < TILE_LIST_SIZE; ++c)
             {
                 collisionMasks[0][c].Write(writer);
                 collisionMasks[1][c].Write(writer);
