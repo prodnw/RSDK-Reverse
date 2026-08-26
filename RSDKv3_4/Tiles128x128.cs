@@ -136,7 +136,7 @@
         /// <summary>
         /// The number of chunks that a stage has
         /// </summary>
-        public const int CHUNK_LIST_SIZE = 512;
+        public const int CHUNK_LIST_SIZE = 1024;
 
         /// <summary>
         /// the list of chunks in the file

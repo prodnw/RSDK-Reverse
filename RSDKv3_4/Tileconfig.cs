@@ -122,7 +122,7 @@
         /// <summary>
         /// The number of tiles that a stage has
         /// </summary>
-        public const int TILE_LIST_SIZE = 0x400;
+        public const int TILE_LIST_SIZE = 2048;
 
         /// <summary>
         /// A list of all the mask values

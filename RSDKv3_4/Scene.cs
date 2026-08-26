@@ -121,7 +121,7 @@ namespace RSDKv3_4
         /// <summary>
         /// the Max amount of entities that can be in a single stage
         /// </summary>
-        public const int ENTITY_LIST_SIZE = 1024;
+        public const int ENTITY_LIST_SIZE = 2048;
 
         public abstract void Read(Reader reader);
 
